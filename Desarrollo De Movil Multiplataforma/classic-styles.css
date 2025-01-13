@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.classic-header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+.classic-login {
+    margin: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    max-width: 400px;
+    margin: auto;
+}
+
+button {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0055aa;
+}
+
+.classic-footer {
+    background-color: #f1f1f1;
+    text-align: center;
+    padding: 10px 0;
+}

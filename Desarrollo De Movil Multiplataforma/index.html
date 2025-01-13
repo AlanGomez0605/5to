@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPodai 1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Logo UTHH" class="logo">
+            <h1>UNIVERSIDAD TECNOLÓGICA DE LA HUASTECA HIDALGUENSE</h1>
+        </div>
+    </header>
+    <main>
+        <section class="login-section">
+            <div class="login-container">
+                <h2>Portal Digital de Atención Integral a Estudiantes de la UTHH</h2>
+                <form class="login-form">
+                    <label for="periodo">Período:</label>
+                    <select id="periodo" name="periodo">
+                        <option value="20251">20251</option>
+                        <option value="20232">20232</option>
+                    </select>
+
+                    <label for="sesion">Sesión:</label>
+                    <select id="sesion" name="sesion">
+                        <option value="">[Elija un tipo]</option>
+                        <option value="docente">Docente IE</option>
+                        <option value="estudiante">Estudiante</option>
+                    </select>
+
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" placeholder="Matrícula">
+
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena">
+
+                    <button type="submit">Entrar</button>
+                </form>
+                <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+            </div>
+        </section>
+        <section class="info-section">
+            <p>Eres el visitante número: <span class="visitor-count">5435693</span></p>
+            <p>Aviso: A los <strong>docentes de Inglés</strong>, para iniciar sesión...</p>
+            <div class="top-students">
+                <h3>MEJORES PROMEDIOS DEL PERÍODO 20243</h3>
+                <table id="students-table">
+                    <thead>
+                        <tr>
+                            <th>Licenciatura</th>
+                            <th>Promedio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Aquí se cargarán los datos dinámicamente desde la base de datos -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Simulación de datos recibidos desde la base de datos
+        const studentsData = [
+            { licenciatura: 'Mendoza Hernández Itzel Guadalupe (10° A)', promedio: 10 },
+            { licenciatura: 'Velazco Rangel Olivia (10° A)', promedio: 10 },
+            { licenciatura: 'Gómez Céspedes Ángel Doamel (10° A)', promedio: 10 }
+        ];
+
+        // Cargar datos en la tabla
+        const tableBody = document.querySelector('#students-table tbody');
+
+        studentsData.forEach(student => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${student.licenciatura}</td>
+                <td>${student.promedio}</td>
+            `;
+            tableBody.appendChild(row);
+        });
+    </script>
+</body>
+</html>
